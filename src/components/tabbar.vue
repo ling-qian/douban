@@ -4,17 +4,18 @@
   </div>
 </template>
 <script>
-  import mTabbarItem from './tabbar-item';
-  export default{
-      props:['value']
+  import mTabbatItem from './tabbar-item';
+  export default {
+    props: ['value']
   }
 </script>
 <style lang="less">
   @import "../assets/less/var.less";
-  .m-tabbar{
+  .m-tabbar {
     display: flex;
     flex-direction: row;
     position: fixed;
+    z-index: 9;
     bottom: 0;
     left: 0;
     right: 0;
@@ -22,6 +23,16 @@
     overflow: hidden;
     height: 50px;
     background: #fff;
-    border-top: 1px solid #e4e4e4;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 1px;
+      background: @tabbarBorderColor;
+      transform: scaleY(0.5);
+    }
   }
+
 </style>
